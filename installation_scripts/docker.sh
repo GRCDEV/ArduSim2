@@ -2,8 +2,8 @@
 
 # Use a more reliable check for Docker installation
 if command -v docker &>/dev/null; then
-  echo -e "\033[33mDocker is already installed. Skipping installation...\033[0m"
-  exit 1
+  echo -e "\033[32mDocker is already installed. Skipping installation...\033[0m"
+  exit 0
 else
   echo "Going to install Docker"
   # Add Docker's official GPG key:
@@ -28,6 +28,6 @@ else
     exit 1
   fi
 
-  echo -e "\033[32mDocker and Docker Compose successfully installed!\033[0m"
+  echo -e "\033[32mDocker successfully installed!\033[0m"
 fi
 exit 0

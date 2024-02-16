@@ -8,3 +8,4 @@ if [[ $(id -u) -ne 0 ]]; then
 fi
 
 ./installation_scripts/docker.sh
+./installation_scripts/docker_without_root.sh
