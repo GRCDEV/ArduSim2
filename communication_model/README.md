@@ -1,0 +1,1 @@
+This model will be use to organize the communication between all the containers.
