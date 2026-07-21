@@ -1,0 +1,10 @@
+{
+  "broker_ip": "127.0.0.1",
+  "broker_port": 3000,
+  "subscription_topic": "algo/mission",
+  "publish_topic": "uav/1/cmd",
+  "telemetry_topic": "uav/1/telemetry",
+  "distance_to_waypoint_reached": 5.0,
+  "minimum_waypoint_relative_altitude": 10.0,
+  "waypoints_relative_altitude": 15.0
+}

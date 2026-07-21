@@ -1,0 +1,5 @@
+module follow_me
+
+go 1.20
+
+require github.com/go-viper/mapstructure/v2 v2.5.0

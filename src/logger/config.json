@@ -1,0 +1,9 @@
+{
+  "udp_addr": "0.0.0.0:5000",
+  "http_addr": "0.0.0.0:8080",
+  "logs_dir": "./data/logs",
+  "max_lines": 10000,
+  "buffer_size": 5000,
+  "workers_count": 5,
+  "truncation_interval_s": 10
+}

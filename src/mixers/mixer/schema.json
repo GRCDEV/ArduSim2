@@ -1,0 +1,46 @@
+{
+  "service_id": "mixer",
+  "title": "Default Mixer",
+  "properties": {
+    "broker_ip": {
+      "default": "communication_module"
+    },
+    "broker_port": {
+      "default": 3400
+    },
+    "uav_controller_ip": {
+      "default": "uav_controller"
+    },
+    "uav_controller_port": {
+      "default": 9876
+    },
+    "uav_telemetry_port": {
+      "default": 3500
+    },
+    "telemetry_topic": {
+      "default": "telemetry"
+    },
+    "suggestions_topic": {
+      "default": "suggestions"
+    },
+    "global_commands": {
+      "default": "global"
+    },
+    "logs_topic": {
+      "default": "logs"
+    },
+    "mix_window_ms": {
+      "type": "integer",
+      "title": "Mix Window (ms)",
+      "default": 200
+    },
+    "services_priority": {
+      "type": "array",
+      "title": "Services Priority",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}

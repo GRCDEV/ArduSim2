@@ -1,0 +1,46 @@
+{
+  "service_id": "followme",
+  "title": "FollowMe",
+  "properties": {
+    "role": {
+      "title": "Role",
+      "type": "string",
+      "enum": ["master", "slave"],
+      "description": "Current role of the UAV in the Follow Me protocol. Must be set manually.",
+      "default": "master"
+    },
+    "broker_ip": {
+      "default": "communication_module"
+    },
+    "broker_port": {
+      "default": 3400
+    },
+    "telemetry_topic": {
+      "default": "telemetry"
+    },
+    "suggestions_topic": {
+      "default": "suggestions"
+    },
+    "broadcast_topic": {
+      "default": "external"
+    },
+    "subscription_topic": {
+      "default": "algo/followme"
+    },
+    "slaves_takeoff_altitude": {
+      "type": "number",
+      "title": "Takeoff Altitude (m)",
+      "description": "Relative altitude reached during the initial takeoff phase.",
+      "default": 5.0
+    },
+    "send_period_ms": {
+      "type": "integer",
+      "title": "Broadcast Period (ms)",
+      "description": "Time interval between master's position broadcasts.",
+      "default": 1000
+    },
+    "logs_topic": {
+      "default": "logs"
+    }
+  }
+}

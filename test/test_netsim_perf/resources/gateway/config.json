@@ -1,0 +1,9 @@
+{
+  "telemetry_port": 3000,
+  "messages_port": 3001,
+  "subscribers_port": 3002,
+  "netsim_listen_port": 3003,
+  "snapshot_interval_s": 1,
+  "logger_ip": "tester",
+  "logger_port": 5000
+}

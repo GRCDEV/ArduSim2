@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: ../../src/netsim_gateway
+      dockerfile: Dockerfile
+    working_dir: /app_config
+    volumes:
+      - ./resources/gateway:/app_config
+    environment:
+      - ADDRS=netsim1:3000,netsim2:3000
+    depends_on:
+      - tester
+
+  netsim1:
+    build:
+      context: ../../src/netsim
+      dockerfile: Dockerfile
+    working_dir: /app_config
+    volumes:
+      - ./resources/netsim:/app_config
+    environment:
+      - NODE_ID=netsim1
+    depends_on:
+      - tester
+
+  netsim2:
+    build:
+      context: ../../src/netsim
+      dockerfile: Dockerfile
+    working_dir: /app_config
+    volumes:
+      - ./resources/netsim:/app_config
+    environment:
+      - NODE_ID=netsim2
+    depends_on:
+      - tester
+
+  tester:
+    build:
+      context: ./tester
+      dockerfile: Dockerfile

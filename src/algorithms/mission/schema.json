@@ -1,0 +1,96 @@
+{
+  "service_id": "mission",
+  "title": "Mission",
+  "properties": {
+    "mission_file": {
+      "type": "string",
+      "format": "kml",
+      "contentMediaType": "application/vnd.google-earth.kml+xml",
+      "title": "Mission Route (.kml)",
+      "description": "El archivo KML que contiene las rutas de vuelo para la misión."
+    },
+    "broker_ip": {
+      "default": "communication_module"
+    },
+    "broker_port": {
+      "default": 3400
+    },
+    "subscription_topic": {
+      "default": "algo/mission"
+    },
+    "publish_topic": {
+      "default": "suggestions"
+    },
+    "telemetry_topic": {
+      "default": "telemetry"
+    },
+    "distance_to_waypoint_reached": {
+      "type": "number",
+      "title": "Distance to Waypoint Reached (cm)",
+      "default": 200.0
+    },
+    "minimum_waypoint_relative_altitude": {
+      "type": "number",
+      "title": "Minimum Waypoint Relative Altitude (m)",
+      "default": 5.0
+    },
+    "external_messages_topic": {
+      "default": "external"
+    },
+    "mission_end": {
+      "type": "string",
+      "title": "Mission End",
+      "enum": ["unmodified", "land", "rtl"],
+      "default": "unmodified"
+    },
+    "final_altitude_for_rtl": {
+      "type": "number",
+      "title": "Final Altitude for RTL (m)",
+      "default": 5.0
+    },
+    "input_mission_delay": {
+      "type": "number",
+      "title": "Input Mission Delay (s)",
+      "default": 0.0
+    },
+    "override_include_altitude_values": {
+      "type": "boolean",
+      "title": "Override Include Altitude Values",
+      "default": false
+    },
+    "waypoints_relative_altitude": {
+      "type": "number",
+      "title": "Waypoints Relative Altitude (m)",
+      "default": 5.0
+    },
+    "override_include_yaw_values": {
+      "type": "boolean",
+      "title": "Override Include Yaw Values",
+      "default": false
+    },
+    "yaw_value": {
+      "type": "string",
+      "title": "Yaw Value",
+      "enum": [
+        "Fixed",
+        "Face next Waypoint",
+        "Face next Waypoint except RTL",
+        "Face along GPS course"
+      ],
+      "default": "Face next Waypoint except RTL"
+    },
+    "relative_movement": {
+      "type": "boolean",
+      "title": "Relative Movement",
+      "default": false
+    },
+    "logs_topic": {
+      "default": "logs"
+    },
+    "service_id": {
+      "type": "string",
+      "title": "Service ID",
+      "default": "mission"
+    }
+  }
+}

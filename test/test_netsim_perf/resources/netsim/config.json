@@ -1,0 +1,17 @@
+{
+  "listen_port": 3000,
+  "gateway_ip": "gateway",
+  "gateway_port": 3003,
+  "loss_mode": "realistic",
+  "buffer_size_bytes": 163840,
+  "csma_range_m": 700.0,
+  "max_csma_retries": 5,
+  "chunk_size_m": 350.0,
+  "chunk_radius": 2,
+  "max_range_m": 1350.0,
+  "snapshot_interval_s": 1,
+  "flush_interval_ms": 10,
+  "level": "info",
+  "logger_ip": "tester",
+  "logger_port": 5000
+}

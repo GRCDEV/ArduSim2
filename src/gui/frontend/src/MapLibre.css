@@ -1,0 +1,92 @@
+/* MapLibre UAV Markers & Tags */
+.uav-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.uav-sphere-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.uav-sphere {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    var(--uav-color, var(--primary)) 0%,
+    var(--uav-color, #10b981) 60%,
+    #000 100%
+  );
+  box-shadow:
+    0 0 15px var(--uav-color, rgba(78, 222, 163, 0.5)),
+    inset -4px -4px 10px rgba(0, 0, 0, 0.6),
+    inset 2px 2px 8px rgba(255, 255, 255, 0.2);
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Directional indicator on the ball */
+.uav-sphere::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 8px;
+  background: var(--uav-color, var(--primary));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 0 10px var(--uav-color, var(--primary));
+  filter: brightness(1.2);
+}
+
+/* Hover effect */
+.uav-marker:hover .uav-sphere {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px var(--uav-color, var(--primary));
+}
+
+/* 2D Altitude Tag */
+.uav-altitude-tag {
+  background: rgba(19, 19, 19, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--outline-variant);
+  border-radius: 4px;
+  color: var(--uav-color, var(--primary));
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  margin-top: -4px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Offset Effect */
+.maplibre-marker-3d {
+  /* In 3D mode, the marker can be offset to imply altitude */
+  transform-style: preserve-3d;
+}
+
+/* MapLibre Controls Overrides */
+.maplibregl-ctrl-group {
+  background: rgba(19, 19, 19, 0.8) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--outline-variant) !important;
+}
+
+.maplibregl-ctrl-group button {
+  filter: invert(1) brightness(0.8);
+}

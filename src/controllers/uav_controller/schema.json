@@ -1,0 +1,18 @@
+{
+    "service_id": "uav_controller",
+    "title": "ArduPilot UAV Controller",
+    "description": "Default controller to interface with ArduPilot binaries using MAVLink.",
+    "properties": {
+        "LOGGING": { "title": "Logging Level", "type": "string", "enum": ["TRACE_TO_FILE", "TRACE_TO_CONSOLE", "DEBUG_TO_CONSOLE", "INFO_TO_CONSOLE"], "default": "DEBUG_TO_CONSOLE" },
+        "GCS_ID": { "title": "GCS ID", "type": "integer", "default": 255 },
+        "API_PORT": { "title": "API Port", "type": "integer", "default": 9876 },
+        "CONNECTION_TYPE": { "title": "Connection Type", "type": "string", "enum": ["TCP", "SERIAL"], "default": "TCP" },
+        "DRONE_PORT": { "title": "Drone Port", "type": "integer", "default": 5760 },
+        "DRONE_IP": { "title": "Drone IP", "type": "string", "default": "127.0.0.1" },
+        "SERIAL_PORT": { "title": "Serial Port", "type": "string", "default": "/dev/ttyAMA0" },
+        "BAUDRATE": { "title": "Baudrate", "type": "integer", "default": 57600 },
+        "PUBLISHING_PERIOD": { "title": "Publishing Period (ms)", "type": "number", "default": 1000.0 },
+        "PUBLISHING_IP": { "title": "Publishing IP", "type": "string", "default": "mixer" },
+        "PUBLISHING_PORT": { "title": "Publishing Port", "type": "integer", "default": 3500 }
+    }
+}
